@@ -1,0 +1,32 @@
+var MainPage = require('../PageObject/MainPageObgect')
+var ContactsPage = require('../PageObject/ContactsPageObject')
+describe('Main Page', function(){
+    var mainPage
+    var contactPage
+    beforeEach(function(){
+        mainPage = new MainPage()
+        contactPage = new ContactsPage()
+        browser.get('http://localhost:7772/')
+    })
+    it ('should open contacts page', function(){
+        mainPage.contactsNavBar.click()
+        expect (contactPage.phoneNumberPresenter.getText()).toEqual('0772671360')
+        //expect(mainPage.mainPageTitle.getText()).toEqual('Онлайн-курсы')
+        // expect(mainPage.mainNavBar.getText()).toEqual('Главная')
+        // expect(mainPage.contactsNavBar.getText()).toEqual('Контакты')
+        // expect(mainPage.aboutUsNavBar.getText()).toEqual('О Нас')
+        // expect(mainPage.registrationNavBar.getText()).toEqual('Регистрация')
+        // expect(mainPage.entetNavBar.getText()).toEqual('Вход')
+        // expect(mainPage.mainPageCotegori.getText()).toEqual('Категории')
+        expect(mainPage.firstPageImg.isDisplayed()).toBe(true)
+        // expect(mainPage.secondPageImg.isDisplayed()).toBe(true)
+        // expect(mainPage.thirdPageImg.isDisplayed()).toBe(true)
+        // expect(mainPage.firstImgTxt.getText()).toEqual('Бухгалтерия')
+        // expect(mainPage.secondImgTxt.getText()).toEqual('Программирование')
+        // expect(mainPage.thirdImgTxt.getText()).toEqual('Кулинария')
+        // expect(mainPage.firstImgBtn.isDisplayed()).toBe(true)
+        // expect(mainPage.secondImgBtn.isDisplayed()).toBe(true)
+        // expect(mainPage.thirdImgBtn.isDisplayed()).toBe(true)
+        // expect(mainPage.bodyFooter.getText()).toEqual('Все права защищены 2019 г.')
+    })
+})
